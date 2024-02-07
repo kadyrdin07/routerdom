@@ -1,0 +1,58 @@
+html {
+}
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.container {
+		background: url("https://static.vecteezy.com/system/resources/thumbnails/007/075/692/small/abstract-white-fluid-wave-background-free-vector.jpg")
+			center/cover fixed;
+		width: 1300px;
+		height: 500px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 40px;
+		box-shadow:  0 0 50px 0 black;
+
+
+		.content {
+			width: 400px;
+			height: 400px;
+			background: rgb(12, 146, 48);
+			border: 2px solid black;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			flex-direction: column;
+			gap: 30px;
+			margin: 20px;
+			border-radius: 30px;
+			box-shadow: 0 0 30px 0 white;
+
+			.img {
+				width: 200px;
+				height: 200px;
+				margin-left: 150px;
+				border-radius: 30px;
+				border: 5px solid black;
+			}
+			.divIn {
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+				width: 300px;
+				height: 500px;
+				background: rgb(12, 154, 186);
+				border: 2px solid rgb(45, 45, 114);
+				border-radius: 30px;
+				box-shadow: 0 0 30px 0 white;
+			
+			}
+		}
+	}
+}

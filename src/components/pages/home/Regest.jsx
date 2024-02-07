@@ -3,6 +3,7 @@ import scss from "./Regest.module.scss";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 const url =
 	"https://api.elchocrud.pro/api/v1/62575360e1d245307b2764c6cbc98e08/project";
 const Regest = () => {
@@ -13,34 +14,34 @@ const Regest = () => {
 
 	const handle = async () => {
 		if (name === "" || password === "") {
-			alert("write");
+			alert("writing ");
 		} else {
-			const response = await axios.get(url)
-			const responseData = response.data
-
+			const response = await axios.get(url);
+			const responseData = response.data;
 			const findUser = responseData.find(
 				(item) => item.name === name && item.password === password
-					)
+			);
 
-					if(findUser) {
-						navigate("/home");
-					} else {
-						alert ("")
-					}
+			if (findUser) {
+				navigate("/Login");
+				localStorage.setItem("isAuth","" +findUser._id);
+			} else {
+				alert("node found");
+			}
 		}
 
 		try {
-      const response = await axios.post(url, { name, password });
+			const response = await axios.post(url, { name, password });
 
-      if (response.status === 200 || response.status === 201) {
-        localStorage.setItem("title", name);
-        localStorage.setItem("password", password);
-        navigate("/login");
-      }
-    } catch (error) {
-      console.error("Ошибка при выполнении запроса:", error);
-      alert("Произошла ошибка при регистрации. Попробуйте снова.");
-    }
+			if (response.status === 200 || response.status === 201) {
+				localStorage.setItem("title", name);
+				localStorage.setItem("password", password);
+				navigate("/");
+			}
+		} catch (error) {
+			console.error("Ошибка при выполнении запроса:", error);
+			alert("Произошла ошибка при регистрации. Попробуйте снова.");
+		}
 	};
 
 	return (
@@ -70,14 +71,12 @@ const Regest = () => {
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
 							/>
-
-							<button className={scss.button} onClick={() => handle()}>
-								<Link to="/Login">далее</Link>
-							</button>
 						</div>
 					</div>
+					<Button onClick={() => handle()} variant="contained">
+						<Link to="/">CONTAINED</Link>
+					</Button>
 				</div>
-
 			</div>
 		</section>
 	);

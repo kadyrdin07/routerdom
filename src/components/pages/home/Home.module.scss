@@ -1,0 +1,31 @@
+.Home {
+  // background: url("https://img.freepik.com/free-vector/gradient-geometric-background_23-2149324491.jpg")center/cover fixed;
+  // height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 300px;
+  flex-wrap: wrap;
+	.cards {
+    width: 300px;
+    height: 200px;
+    background-color: rgb(207, 67, 186);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+	}
+	.imager {
+    width: 400px;
+    height: 400px;
+    border:5px solid black;
+    border-radius: 300px;
+
+	}
+  .button{
+    width: 200px;
+    height: 30px;
+    background: blue;
+  }
+}
